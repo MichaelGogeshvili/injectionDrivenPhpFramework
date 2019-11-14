@@ -1,0 +1,50 @@
+<?php
+
+
+
+$route=(require('app/sys/getroute'))();
+$dv = get_defined_vars(); $dv = array_reduce(explode('.', '_GET._REQUEST._POST._FILES._ENV._COOKIE.route'), function($c, $x)use($dv){$c[$x] = @$dv[$x]; return $c; }, []);
+return function(array $DVs, array $GLOBs, string $route) /** BEGIN{{{ **/{ 
+  $cfn = $GLOBALS['getControllerInfo']();
+  if(! file_exists($cfn) ){
+    throw new Exception($cfn . ' does not exist despite restore_controller effect ');
+  }
+  $clsr = require($cfn);
+  $clo = new ReflectionFunction($clsr);
+  $params = $clo->getParameters();
+  /***
+   *
+   *
+   */
+  $rzf = function($rz){ 
+    $name = $rz->getName(); $t=@$rz->getType();
+    if($t)
+      return[ $name, @$t->getName(),@class_exists($t->getName())]; 
+    else return[$name]; 
+  };
+  $ptypes = array_map($rzf, $params);
+  /**@var controller runtime arguments */
+  $cra = func_get_args();
+  $managedController = function($data)use($clo,$ptypes,$cra,$route) {
+    $o = function($name, $type='', $classExists = false ) use ($data,$cra,$route,$clo) { 
+      $name = trim($name); $ret = '';
+      if($type&&class_exists($type)) { $ret = (new ReflectionClass($type))->newInstanceArgs($cra); }
+      if(!$ret)
+        $ret = $$name;
+      if(!$ret)
+        $ret = @$cra[0][$name];
+      if(!$ret)
+        $ret = @$cra[1][$name];
+      if($type=='object'){$ret = (object)$ret; }
+      if($type=='array'){$ret = (array)$ret; }
+      return $ret;
+    };
+    $managedArgs = array_map ( function($tz) use ( $o ) { return call_user_func_array($o, $tz); }, $ptypes); 
+    
+    return $clo->invokeArgs($managedArgs);
+  };
+  return $managedController;
+};/**}}}END*/
+
+
+

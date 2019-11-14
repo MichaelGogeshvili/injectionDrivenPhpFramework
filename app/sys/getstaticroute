@@ -1,0 +1,11 @@
+<?php
+/***
+  * (#) app/sys/getstaticroute
+  */
+require_once 'init';
+
+return function() {
+  $route = trim(route_init(),'/');
+  $route = $route ?: '';
+  return $route;
+};

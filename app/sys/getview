@@ -1,0 +1,48 @@
+<?php 
+
+return function( string$route ) {
+  /** 
+    * @param $input input data for the view function as they are returned from the corresponding controller
+    * @return html string 
+    **/
+  return function( array $input ) {
+    $contentFun = null; $layoutFun = null;
+    try {
+      $A = __DIR__."/render/incl/render";
+      if(!file_exists($A)) {
+      
+        throw new Exception($A.' -- does -- not -- exist');
+      }
+      $renderer = require($A);
+      $viewInfo = $GLOBALS['getViewInfo']();
+      
+      $contentFun = $renderer($viewInfo[1], $input);
+      $layoutFun  = $renderer($viewInfo[0], $input);
+      $content = $contentFun();
+
+      $layout  = $layoutFun();
+      if($layout){
+        $EMBEDF = $GLOBALS['import']('app/sys/lib/embed');
+        return $EMBEDF($content,$layout);
+      }
+      else{
+        return $content;
+      }
+    }
+    catch(Exception $seh){
+      $errf = implode(DIRECTORY_SEPARATOR,[MAIN,'app',"views","error.view"]) ; 
+      $error = $seh->getMessage();
+      $rf = new ReflectionFunction($contentFun);
+
+      $file = ($rf)->getFileName();
+      $line = ($rf)->getStartLine(); $LINESTR = file($file)[$line];
+      $endl = ($rf)->getEndLine();
+      $FUNCNAME = $rf->getName() ;
+      $error = "\n".@$error. "\n, called from $FUNCNAME() in FILE $file ON LINE $line!!!\n";
+      error_log($error,4);
+      return $renderer($errf, ['error'=>$error])();
+    }
+  };
+};
+
+

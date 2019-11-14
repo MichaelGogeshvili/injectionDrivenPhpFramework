@@ -1,0 +1,31 @@
+<?php
+/**
+  * @class Basic DB Connection engine
+  */
+class DBConnector {
+  const DBN='phpipam'; const DBH='localhost'; const DBU='root'; const DBP=''; protected $link; 
+  public function __construct(){ $this->link = mysqli_connect(self::DBH,self::DBU,'',self::DBN); }
+  public function showTables() { return $this->_do('show tables'); }
+  public function getModel($tname) { return new DBTable($this,$tname); }
+  public function __get($tname) { return $this->getModel($tname); }
+  public function _do($q,$qMeta=false) {
+    $r = mysqli_query($this->link, $q);
+    $f = function() use($r){ return mysqli_fetch_assoc($r); };
+    while($next = $f()) { $meta = @$meta?:array_keys($next); @$all[]=array_values($next); }
+    return $qMeta?$meta:$all; 
+  }
+  public function __destruct(){ mysqli_close($this->link); }
+}
+class DBTable {
+  protected $tname, $dbc;
+  public $p=-1;
+
+  public function q()          { return "SELECT * FROM {$this->tname}";                        }
+  public function __construct($dbc,$tname) {$this->tname = $tname;$this->dbc=$dbc;             }
+  public function  _d()        { return $this->dbc->_do(@func_get_arg(0)?:$this->q());         }
+  public function cached($fc=0){ $c=&$GLOBALS['.c'][$this->tname];return$c=$fc?$this->_d():($c?:$this->_d());}
+
+  public function length()     { return count($this->cached());                                }
+  public function findAll()    { return $this->cached();                                       }
+  public function metadata()   { return $this->dbc->_do($this->q(),1);                         }
+}

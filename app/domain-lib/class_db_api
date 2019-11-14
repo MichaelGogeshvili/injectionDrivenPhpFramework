@@ -1,0 +1,60 @@
+<?php
+$GLOBALS['import']('app/domain-lib/sql_compile_exception');
+$GLOBALS['import']('app/domain-lib/conn');
+if(!class_exists('DB_Api')) {
+  class DB_Api {
+    public $conn;
+    protected $errors = [];
+    protected $CALLEE="", $CALLARG=[];
+    public function  getFun() {
+      return $this->CALLEE; 
+    }
+    public function  getArgs() {
+      return $this->CALLARG; 
+    }
+    public function pushFun($fn){
+      $this->CALLEE.=$fn;
+    }
+    public function pushOp($OP) {
+      $OP = strtoupper(trim($OP));
+      if(in_array((trim($OP)), [ 'AND','OR' ])) {
+        $this->CALLARG[]= " $OP ";
+      }else {
+        throw new SqlCompileException ("operator $OP is not implemented ");
+      }
+    }
+    public function pushArg($a=null, $b=null){
+      #if(!$a || !$b) throw new SqlCompileException("($a = $b) isnt valid condition");
+      $this->CALLARG[]= "( $a = $b )";
+    }
+    public function invoke($t){
+      if(!$this->CALLEE)
+        throw new Exception('empty CALLEE');
+      if($this->CALLEE){
+       
+        return call_user_func([$this,$this->CALLEE], $this->CALLARG,$t);
+      }
+    }
+    public function find($where,$t) {
+      return $this->findImpl($where,$t,'LIMIT 1');
+    }
+    public function findAll($where,$t) {
+      return $this->findImpl($where,$t,'');
+    }
+    protected function findImpl($where,$t, $lim) {
+      if($where) {
+        $sql = "SELECT * FROM $t WHERE 
+        ". implode(' ',$where) ."
+        $lim";
+      }else   $sql = "SELECT * FROM $t $lim";
+      return $this->runSql($sql);
+    }
+    /**
+      * @runs by means of the class below
+      */
+    protected function runSql($sql) {
+      return [ 'data'=>($this->conn?:($this->conn=new DBConnector()))->_do($sql),
+      'metadata'=>($this->conn?:($this->conn=new DBConnector()))->_do($sql,true), ];
+    }
+  }
+}

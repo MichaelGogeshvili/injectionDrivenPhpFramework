@@ -1,0 +1,147 @@
+<?php
+#print phpipam_network_functions::long2ip6('336395549904799703390415618052362076160');
+
+/**
+ * @original-author: Miha Petkovsek <miha.petkovsek@gmail.com>
+ */
+class phpipam_network_functions {
+  /**
+   * Transforms ipv6 to nt
+   *
+   * @access  public static
+   * @param mixed $ipv6
+   * @return mixed
+   */
+  static function ip2long6 ($ipv6) {
+    if($ipv6 == ".255.255.255") {
+      return false;
+    }
+    $ip_n = inet_pton($ipv6);
+    $bits = 15; // 16 x 8 bit = 128bit
+    $ipv6long = "";
+    while ($bits >= 0)
+    {
+      $bin = sprintf("%08b",(ord($ip_n[$bits])));
+      $ipv6long = $bin.$ipv6long;
+      $bits--;
+    }
+    return gmp_strval(gmp_init($ipv6long,2),10);
+  }
+  /**
+   * Transforms int to ipv4
+   *
+   * @access public static
+   * @param mixed $ipv4long
+   * @return mixed
+   */
+  static function long2ip4($ipv4long) {
+    if (PHP_INT_SIZE==4) {
+      // As of php7.1 long2ip() no longer accepts strings.
+      // Convert unsigned int IPv4 to signed integer.
+      $ipv4long = (int) ($ipv4long + 0);
+    }
+    return long2ip($ipv4long);
+  }
+  /**
+   * Transforms int to ipv6
+   *
+   * @access  public static
+   * @param mixed $ipv6long
+   * @return mixed
+   */
+  static function long2ip6($ipv6long) {
+    $hex = sprintf('%032s', gmp_strval(gmp_init($ipv6long, 10), 16));
+    $ipv6 = implode(':', str_split($hex, 4));
+    // compress result
+    return inet_ntop(inet_pton($ipv6));
+  }
+  /**
+   * Identifies IP address format
+   *
+   *  0 = decimal
+   *  1 = dotted
+   *
+   * @access  
+   * @param mixed $address
+   * @return mixed decimal or dotted
+   */
+  static function identify_address_format ($address) {
+    return is_numeric($address) ? "decimal" : "dotted";
+  }
+  /**
+   * Transform IP address from decimal to dotted (167903488 -> 10.2.1.0)
+   *
+   * @access  public static
+   * @param mixed $address
+   * @return mixed dotted format
+   */
+  static function transform_to_dotted ($address) {
+    if (self::identify_address ($address) == "IPv4" ) {
+      return(self::long2ip4($address)); 
+    }
+    else {
+      return(self::long2ip6($address)); 
+    }
+  }
+  /**
+   * Transform IP address from dotted to decimal (10.2.1.0 -> 167903488)
+   *
+   * @access  public static
+   * @param mixed $address
+   * @return int IP address
+   */
+  static function transform_to_decimal ($address) {
+    if (self::identify_address ($address) == "IPv4" ) {
+      return( sprintf("%u", ip2long($address)) ); 
+    }
+    else {
+      return(self::ip2long6($address)); 
+    }
+  }
+  /**
+   * Transforms IP address to required format
+   *
+   *  format can be decimal (1678323323) or dotted (10.10.0.0)
+   *
+   * @access  public static
+   * @param mixed $address
+   * @param string $format (default: "dotted")
+   * @return mixed requested format
+   */
+  static function transform_address ($address, $format = "dotted") {
+    // no change
+    if(self::identify_address_format ($address) == $format) {
+      return $address; 
+    }
+    else {
+      if(self::identify_address_format ($address) == "dotted") {
+        return self::transform_to_decimal ($address);
+      }
+      else {
+        return self::transform_to_dotted ($address); 
+      }
+    }
+  }
+  /**
+   * identify ip address type - ipv4 or ipv6
+   *
+   * @access  public static
+   * @param mixed $address
+   * @return mixed IP version
+   */
+  static function identify_address ($address) {
+    // dotted representation
+    if (strpos($address, ':') !== false) return 'IPv6';
+    if (strpos($address, '.') !== false) return 'IPv4';
+    // numeric representation
+    if (is_numeric($address)) {
+      if($address <= 4294967295) return 'IPv4'; // 4294967295 = '255.255.255.255'
+      return 'IPv6';
+    }
+    else {
+      // decimal representation
+      if(strlen($address) < 12) return 'IPv4';
+      return 'IPv6';
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<?php
+$GLOBALS['import']('app/domain-lib/sql_exception');
+if(!class_exists('DBConnector')) {
+  /**
+    * @class Basic DB Connection engine
+    */
+  class DBConnector {
+    const DBN='phpipam'; const DBH='localhost'; const DBU='root'; const DBP=''; protected $link; 
+    public function __construct(){ $this->link = mysqli_connect(self::DBH,self::DBU,'',self::DBN); }
+    public function showTables() { return $this->_do('show tables'); }
+    public function getModel($tname) { return new DBTable($this,$tname); }
+    public function __get($tname) { return $this->getModel($tname); }
+    public function _do($q,$qMeta=false) {
+      try {
+        $r = mysqli_query($this->link, $q);
+        $e=mysqli_errno($this->link);
+        if($e){
+          throw new Exception($e);
+        }
+      }
+      catch(Exception $seh) {
+        throw new SqlException($seh->getMessage()."\nBAD SQL CODE:\n'''$q'''\n".
+          implode("\n",str_split(mysqli_error($this->link), 54))  );
+      }
+      $f = function() use($r){ if($r)return mysqli_fetch_assoc($r);else return[]; };
+      $all = $meta = [];
+      while($next = $f()) {
+        $meta = $meta?:array_keys($next); 
+        if($qMeta) return $meta;
+        $all[]=array_values($next); 
+      }
+
+      return $all;
+    }
+    public function __destruct(){ mysqli_close($this->link); }
+  }
+  class DBTable {
+    protected $tname, $dbc;
+
+    public function __construct($dbc,$tname) {$this->tname = $tname;$this->dbc=$dbc;                           }
+    public function  _d($sql)        { return $this->dbc->_do($sql);                                           }
+    public function cached($fc=0){ $c=&$GLOBALS['.c'][$this->tname];return$c=$fc?$this->_d():($c?:$this->_d());}
+
+  }
+}

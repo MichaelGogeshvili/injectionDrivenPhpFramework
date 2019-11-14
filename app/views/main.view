@@ -1,0 +1,7 @@
+<?php
+/**
+ * #========(#)/home/misha/myFrame/app/views/main.view============
+ */
+return function($viewData){
+  return json_encode($viewData);
+};

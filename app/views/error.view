@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>error</title>
+  </head>
+  <body bgcolor="#fdc">
+    <div class='alert alert-danger' style="width:450px;margin:10% auto;text-align:center">
+    
+      <?=$pool->error?>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<?php
+
+/** @var dv = defined vars pool; collect defined vars with the excepttion of closures as they are not to be serialized; */
+return function (array  $dvPassed){
+  $dv = $dvPassed;
+  $dv = array_reduce(explode('.', '_GET._REQUEST._POST._FILES._ENV._COOKIE.route'), function($c, $x)use($dv){$c[$x] = @$dv[$x]; return $c; }, []);
+
+  $route=(require('app/sys/getroute'))();
+
+  $map['controller']   = require('getcontroller');
+  $map['report']       = require('getreport'   );
+  $map['route']        = require('getroute'    );
+  $map['view']         = require('getview'     );
+  
+  $routez = $map['route']();
+  $controller = $map['controller']($dv, $GLOBALS, $routez);
+  $view   = $map['view']($map['route']());
+  $report = $map['report'];
+  try {
+    $viewData = $controller( $dv);
+    $clo = $view( $viewData, 'incl' );
+    if(gettype($clo)=='string')
+      return $clo;
+  }
+  catch(SqlException $seh) {
+    $error = $seh->getMessage();
+    return $report( $seh->getMessage() );
+  }
+  catch( Exception $seh ) {
+    return $report( $seh->getMessage() );
+  }
+};

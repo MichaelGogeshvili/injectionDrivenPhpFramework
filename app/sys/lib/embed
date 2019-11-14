@@ -1,0 +1,30 @@
+<?php
+
+
+return function ($viewResult, $layout=null) {
+
+  $callback = function($m) use($viewResult) {
+    $trimTag = function($s,$tagArray){ $S = '(\s|\n)*'; $rv = $s; forEach($tagArray as $TN) { $rv = preg_replace("{^$S<($TN){$S}>$S|$S</($TN)$S>$S\$}si",'',$rv); } return trim($rv); };
+    /** get rid of <body...> and </body> like stuff on the mapped patch */
+    $tagExtractor = function ($tagName, $source) { $p = '@^.*<'.$tagName.'[^>]*>|</'.$tagName.'[^>]*>.*$@is'; return preg_replace( $p, "\n\n", $source); };
+    $tName=strtolower($m[1]);
+    if(!in_array($tName,['head','body']))
+      throw new Exception("we implement only layout:head and layout:body");
+
+    $rt = $tagExtractor($tName, $viewResult);
+    return $trimTag($rt, ['html','body','head']);
+  };
+
+
+
+
+
+  if($layout){
+    $ret = preg_replace_callback('@<layout:(\w+)[^>]*>@i',$callback,$layout);
+  }
+  else{
+    $ret = $viewResult;//returning as is
+  }
+  //prettifying the whole html output
+  return $GLOBALS['import']('app/sys/lib/pretty')($ret,str_repeat(' ',2));
+};

@@ -1,0 +1,56 @@
+<?php
+require_once 'init';
+$parseViewForMeta = function($vfile){ preg_match_all('@<meta([^>]*)>@i',file_get_contents($vfile),$m); foreach($m[1] as $GROUP) { $l = preg_split('{="?}',$GROUP); if(count($l)<2) continue; @list($a,$b)=$l; $s[trim($a)]=trim($b,' /"\''); } return @$s?:[]; };
+return function() use($parseViewForMeta){
+  $route = trim(route_init(),'/');
+  $route = $route ?: 'main';
+
+  $GLOBALS['getControllerInfo'] = function() use ($route) { 
+    $restore_controller = function($Filename){
+      $ROF = <<<"ROF"
+<?php
+/**
+ * #========(#)$Filename============
+ */
+return function(\$cra){
+  return ['TODO_key'=>'TODO: value'];
+};
+ROF;
+      file_put_contents($Filename, $ROF);
+      $ret = require_once($Filename);
+      return $ret;
+    };
+    $baseName = $route;
+    $path = implode(DIRECTORY_SEPARATOR,[MAIN,'app','controllers']);
+    $fname = $baseName . '.controller';
+    $ctrFn = implode(DIRECTORY_SEPARATOR,[$path,$fname]); 
+
+    error_log($ctrFn,4);
+    if(file_exists($ctrFn)) 
+      return $ctrFn;
+    else 
+      return $restore_controller($ctrFn);
+  };
+  ######################################################################
+  $GLOBALS['getViewInfo'] = function() use ($route,$parseViewForMeta) {
+    $restoreView = function($FileName){
+      $ROF = <<<"ROF"
+<?php
+/**
+ * #========(#)$FileName============
+ */
+return function(\$viewData){
+  return json_encode(\$viewData);
+};
+ROF;
+      file_put_contents($FileName, $ROF);
+    };
+    $view = function($VNAME){$BASE = implode(DIRECTORY_SEPARATOR,[MAIN,'app','views','']);return $BASE.$VNAME.'.view';};
+    $lout = function($LNAME){$BASE = implode(DIRECTORY_SEPARATOR,[MAIN,'app','layouts','']);return $BASE.$LNAME.'.layout';};
+    if(!file_exists($view($route))) { $restoreView($view($route)); }
+    $metas = $parseViewForMeta($view($route));
+    $layout = @$metas['layout'] ?:'main';
+    return [$lout($layout),$view($route)];
+  };
+  return $route;
+};

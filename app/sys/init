@@ -1,0 +1,11 @@
+<?php
+function debug($what,$deep=2){ $l=debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS); return $l[$deep][$what]; };
+function basic_init() { if(PHP_SAPI=='cli') { $_COOKIE = []; $argv = &$GLOBALS['argv']?:[]; $arg1 = @$argv[1] ?:'/'; $arg2 = (@strpos(@$argv[2],'-d')===0) ? trim($argv[3],'"'."'") : ''; $_PATH_INFO=trim( parse_url($arg1)['path'], '/' ) ?: '/'; $X = @parse_url("/$arg1")['query'] ?: ""; parse_str($X, $_GET); $X = @parse_url("?$arg2")['query'] ?: ""; parse_str($X, $_POST); $_REQUEST = $request = array_merge( $_GET,$_POST ); $_SERVER['PATH_INFO'] = $_PATH_INFO; PGR_LOG(); } else { $_PATH_INFO=trim( parse_url($_SERVER['REQUEST_URI'])['path'],'/') ?: '/'; $argv = [$_SERVER['SCRIPT_FILENAME'],$_PATH_INFO]; if($_POST){  $argv = array_merge($argv, ['-d', enc($_POST)]); } $argc = count($argv); $_SERVER['argv']=$GLOBALS['argv']=$argv; $_SERVER['argc']=$GLOBALS['argc']=$argc; $_SERVER['PATH_INFO'] = $_PATH_INFO; PGR_LOG(); } };
+function route_init() { if(PHP_SAPI=='cli') { return $_SERVER['route'] = $_SERVER['PATH_INFO']; } else { return $_SERVER['route'] = $_SERVER['argv'][1]; } };
+function parseViewForMeta($vfile){ preg_match_all('@<meta([^>]*)>@i',file_get_contents($vfile),$m); foreach($m[1] as $GROUP) { $l = preg_split('{="?}',$GROUP); if(count($l)<2) continue; @list($a,$b)=$l; $s[trim($a)]=trim($b,' /"\''); } return @$s?:[]; };
+function enc($a){ $d = array_map(null,array_keys($a),$a); return array_reduce( $d, function($c,$e){ $c.=($c?"&":'')."{$e[0]}={$e[1]}";return $c; },''); };
+function E_LOG($dv,$m=''){ /*$f='app/sys/init';$l=debug('line'); error_log("$f:$l; $m  ".preg_replace('|\s+|',' ',strtr(var_export($dv,1),"\n", '')),4); */};
+function PGR_LOG($m='') { /*E_LOG(["POST"=>$_POST,"GET"=>$_GET,],$m);*/ };
+
+(function(){ if((bool)@$GLOBALS['done_init']++ == false){ basic_init(); } $l=debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS); define('MAIN', dirname(realpath( end($l)['file']))); E_LOG(MAIN,'defined MAIN as '); })();
+

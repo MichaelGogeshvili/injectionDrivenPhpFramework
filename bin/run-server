@@ -1,0 +1,56 @@
+#!/bin/bash
+BASE="$(realpath $(dirname $(dirname $0)))"
+for i in {1..122};do DOTS=$DOTS.;done
+function getpid() { netstat -pnl 2>/dev/null | grep 8080 | grep '\w\+/php' | awk  '{print $NF}' | awk -F/ '{print $1}' | grep . && return 0; return 1; }
+function warning() {
+  printf "${DOTS}WARNING\r%s\n" "$@"
+  return 0
+}
+function failure() {
+  printf "${DOTS}FAILURE\r%s\n"  "$@"
+  return 1
+}
+function success(){
+  printf "${DOTS}SUCCESS\r%s\n" "$@"
+  return 0
+}
+start_server() {
+  rm -rf $BASE/var/log
+  mkdir -pv $BASE/var/log
+  getpid > /dev/null && warning IS-RUNNING-WITH PID $(getpid)
+  getpid  > /dev/null|| (
+    [ -z "$(getpid)" ] &&
+    (php -S 0:8080 >> $BASE/var/log/logg 2>&1 )&
+    sleep 0.3
+    [ -n "$(getpid)" ] && success start|| failure start
+  )
+}
+
+stop_server() {
+  getpid>/dev/null || warning IS-NOT-RUNNING 
+  getpid>/dev/null && (
+    kill -9 $(getpid)>/dev/null 2>&1 && success stop|| failure stop
+  )
+}
+
+case $1 in 
+  'status')
+  getpid && echo working || echo server not working
+;;
+
+'start')
+  start_server
+;;
+
+'restart')
+  stop_server 
+  start_server
+;;
+'stop')
+  stop_server 
+;;
+*)
+warning NO OPT $@
+;;
+esac
+

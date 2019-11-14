@@ -1,0 +1,8 @@
+<?php
+return function($m){
+  $s = "<xmp style='text-align:left;margin-left:-3px;' >$m</xmp>"; error_log($m,4); 
+  $renderer = require("render/incl/render");
+  $errf = implode(DIRECTORY_SEPARATOR, [MAIN,"app","views","error.view"]) ; 
+  $error = $s;
+  return $renderer($errf, ['error'=>$error])();
+};

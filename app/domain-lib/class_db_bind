@@ -1,0 +1,44 @@
+<?php
+
+$GLOBALS['import']('app/domain-lib/sql_compile_exception');
+$GLOBALS['import']('app/domain-lib/class_db_api');
+class DB_Bind {
+  public $bind;
+  public $metadata;
+  private $dbApi=null;
+  public function bind(&$fix, &$metaFix) {
+    $this->bind=&$fix;
+    $this->metadata=&$metaFix;
+    return $this;
+  }
+  public function __call($name,$x){
+    $this->dbApi = new DB_Api();
+    $xc = (array)(object)$x;
+    $test=preg_split('|(?<=[[:lower:]])(?=[[:upper:]])|',$name);
+    $stack = (array)(object)$test;
+    $stage = 0;
+    forEach($test as $nav) {
+      $step = $nav;
+      switch($step) {
+        case 'find': case 'All': $this->dbApi->pushFun($step); continue;
+        case 'And': $this->dbApi->pushOp(' AND '); continue;
+        case 'Or': $this->dbApi->pushOp(' OR '); continue;
+        case 'By': ++$stage; continue;
+        default:
+         if($stage<1) continue;
+         $arg = array_shift($xc); 
+
+         $this->dbApi->pushArg(strtolower($step), $arg);
+         continue;
+      }
+    }
+    if(!in_array($this->dbApi->getFun(), ['find', 'findAll']))
+        throw new SqlCompileException();
+    
+    $list = $this->dbApi->invoke($this->__getName());
+    $this->bind = $list['data']; $this->metadata = $list['metadata'];
+    return $list;
+  }
+  public function __getName() {return strtolower(get_class($this)); throw new Exception('must override');}
+}
+

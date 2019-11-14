@@ -1,0 +1,10 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <layout:head/>
+  </head>
+  <body>
+    <layout:body/>
+  </body>
+</html>
+

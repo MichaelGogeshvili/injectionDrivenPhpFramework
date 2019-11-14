@@ -1,0 +1,13 @@
+<?php
+if(!class_exists('DataMapper')) { 
+  class DataMapper {
+    public $resolver;
+    public function __construct($resolver){ $this->resolver = $resolver; }
+
+    public function __get($name) { 
+      $resolved = $this->resolver->__invoke($name);
+      return $resolved?:"Warning: template param \$$name is not assigned";
+    }
+  }
+}
+return function($data) { return new DataMapper($data); } ;

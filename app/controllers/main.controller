@@ -1,0 +1,8 @@
+<?php
+/**
+ * #========(#)$controllerFilename============
+ */
+return function(array $cra, $route){
+  $result = ['TODO_key'=>'TODO: value'];
+  return (compact('result'));
+};
