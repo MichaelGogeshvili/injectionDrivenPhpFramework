@@ -2,7 +2,8 @@
 /**
  * #========(#)$controllerFilename============
  */
-return function(array $cra, $route){
+return function($cra, $route, BusinessObject $bo = null){
+
   $result = [
     'T_key'=>'T_value',
     'P_key'=>'null'

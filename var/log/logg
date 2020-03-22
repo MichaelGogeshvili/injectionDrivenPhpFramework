@@ -454,3 +454,156 @@ Stack trace:
 [Sun Mar 22 22:45:14 2020] 127.0.0.1:45492 [200]: /
 [Sun Mar 22 22:45:43 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
 [Sun Mar 22 22:45:43 2020] 127.0.0.1:45504 [200]: /
+[Sun Mar 22 22:45:55 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:45:55 2020] 127.0.0.1:45514 [200]: /
+[Sun Mar 22 22:45:56 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:45:56 2020] 127.0.0.1:45518 [200]: /another
+[Sun Mar 22 22:45:58 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:45:58 2020] 127.0.0.1:45522 [200]: /another
+[Sun Mar 22 22:46:00 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:46:00 2020] 127.0.0.1:45526 [200]: /another
+[Sun Mar 22 22:46:02 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:46:02 2020] 127.0.0.1:45530 [200]: /another
+[Sun Mar 22 22:46:03 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:46:03 2020] 127.0.0.1:45534 [200]: /
+[Sun Mar 22 22:46:04 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:46:04 2020] 127.0.0.1:45538 [200]: /another
+[Sun Mar 22 22:52:18 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:52:18 2020] 127.0.0.1:45586 [200]: /another
+[Sun Mar 22 22:52:18 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:52:18 2020] 127.0.0.1:45590 [200]: /another
+[Sun Mar 22 22:52:33 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:52:33 2020] 127.0.0.1:45602 [200]: /another
+[Sun Mar 22 22:52:33 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:52:33 2020] 127.0.0.1:45606 [200]: /another
+[Sun Mar 22 22:52:37 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:52:37 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 33
+[Sun Mar 22 22:52:37 2020] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to {closure}() must be an instance of BusinessObject, null given in /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller:5
+Stack trace:
+#0 [internal function]: {closure}(Array, NULL, 'main')
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller(44): ReflectionFunction->invokeArgs(Array)
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/app(20): {closure}(Array)
+#3 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#4 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller on line 5
+[Sun Mar 22 22:52:37 2020] 127.0.0.1:45610 [500]: / - Uncaught TypeError: Argument 2 passed to {closure}() must be an instance of BusinessObject, null given in /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller:5
+Stack trace:
+#0 [internal function]: {closure}(Array, NULL, 'main')
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller(44): ReflectionFunction->invokeArgs(Array)
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/app(20): {closure}(Array)
+#3 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#4 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller on line 5
+[Sun Mar 22 22:52:48 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:52:48 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller on line 6
+[Sun Mar 22 22:52:48 2020] 127.0.0.1:45622 [200]: /
+[Sun Mar 22 22:52:55 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:52:55 2020] 127.0.0.1:45626 [200]: /
+[Sun Mar 22 22:53:05 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:53:05 2020] 127.0.0.1:45638 [200]: /
+[Sun Mar 22 22:53:25 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:53:25 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 33
+[Sun Mar 22 22:53:25 2020] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to {closure}() must be an instance of BusinessObject, null given in /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller:5
+Stack trace:
+#0 [internal function]: {closure}(Array, 'main', NULL)
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller(44): ReflectionFunction->invokeArgs(Array)
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/app(20): {closure}(Array)
+#3 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#4 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller on line 5
+[Sun Mar 22 22:53:25 2020] 127.0.0.1:45646 [500]: / - Uncaught TypeError: Argument 3 passed to {closure}() must be an instance of BusinessObject, null given in /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller:5
+Stack trace:
+#0 [internal function]: {closure}(Array, 'main', NULL)
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller(44): ReflectionFunction->invokeArgs(Array)
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/app(20): {closure}(Array)
+#3 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#4 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller on line 5
+[Sun Mar 22 22:53:34 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:53:34 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 33
+[Sun Mar 22 22:53:34 2020] 127.0.0.1:45650 [200]: /
+[Sun Mar 22 22:53:48 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:53:48 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 33
+[Sun Mar 22 22:53:48 2020] 127.0.0.1:45658 [200]: /
+[Sun Mar 22 22:54:16 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:54:16 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 33
+[Sun Mar 22 22:54:16 2020] 127.0.0.1:45666 [200]: /
+[Sun Mar 22 22:54:26 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:54:26 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 33
+[Sun Mar 22 22:54:26 2020] 127.0.0.1:45674 [200]: /
+[Sun Mar 22 22:54:36 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:54:36 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 33
+[Sun Mar 22 22:54:36 2020] 127.0.0.1:45678 [200]: /
+[Sun Mar 22 22:55:38 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:55:38 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 34
+[Sun Mar 22 22:55:38 2020] 127.0.0.1:45688 [200]: /
+[Sun Mar 22 22:56:32 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:56:32 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 35
+[Sun Mar 22 22:56:32 2020] 127.0.0.1:45700 [200]: /
+[Sun Mar 22 22:57:31 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:57:31 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 35
+[Sun Mar 22 22:57:31 2020] 127.0.0.1:45708 [200]: /
+[Sun Mar 22 22:58:59 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:58:59 2020] 127.0.0.1:45716 [200]: /
+[Sun Mar 22 22:59:07 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:59:07 2020] 127.0.0.1:45720 [200]: /
+[Sun Mar 22 22:59:27 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:59:27 2020] 127.0.0.1:45728 [200]: /
+[Sun Mar 22 22:59:40 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:59:40 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 36
+[Sun Mar 22 22:59:40 2020] 127.0.0.1:45736 [200]: /
+[Sun Mar 22 23:01:04 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:01:04 2020] Class BusinessObject does not have a constructor, so you cannot pass any constructor arguments
+[Sun Mar 22 23:01:04 2020] PHP Notice:  Undefined variable: pool in /home/misha/injectionDrivenPhpFramework/app/views/error.view on line 8
+[Sun Mar 22 23:01:04 2020] PHP Notice:  Trying to get property 'error' of non-object in /home/misha/injectionDrivenPhpFramework/app/views/error.view on line 8
+[Sun Mar 22 23:01:04 2020] 127.0.0.1:45746 [200]: /
+[Sun Mar 22 23:01:22 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:01:22 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 38
+[Sun Mar 22 23:01:22 2020] 127.0.0.1:45754 [200]: /
+[Sun Mar 22 23:01:22 2020] 127.0.0.1:45758 [404]: /favicon.ico - No such file or directory
+[Sun Mar 22 23:01:40 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:01:40 2020] 127.0.0.1:45768 [200]: /
+[Sun Mar 22 23:02:09 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:02:09 2020] 127.0.0.1:45778 [200]: /
+[Sun Mar 22 23:02:21 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:02:21 2020] 127.0.0.1:45786 [200]: /
+[Sun Mar 22 23:02:49 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:02:49 2020] 127.0.0.1:45794 [200]: /
+[Sun Mar 22 23:04:42 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:04:42 2020] PHP Warning:  require_once(./todo/BusinessObject): failed to open stream: No such file or directory in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 39
+[Sun Mar 22 23:04:42 2020] PHP Fatal error:  require_once(): Failed opening required './todo/BusinessObject' (include_path='.:/usr/share/php') in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 39
+[Sun Mar 22 23:04:42 2020] 127.0.0.1:45804 [500]: / - require_once(): Failed opening required './todo/BusinessObject' (include_path='.:/usr/share/php') in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 39
+[Sun Mar 22 23:04:49 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:04:49 2020] 127.0.0.1:45808 [200]: /
+[Sun Mar 22 23:05:04 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:05:04 2020] 127.0.0.1:45818 [200]: /
+[Sun Mar 22 23:05:48 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:05:48 2020] 127.0.0.1:45826 [200]: /
+[Sun Mar 22 23:06:12 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:06:12 2020] 127.0.0.1:45838 [200]: /
+[Sun Mar 22 23:06:28 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:06:28 2020] 127.0.0.1:45846 [200]: /
+[Sun Mar 22 23:06:44 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:06:44 2020] 127.0.0.1:45854 [200]: /
+[Sun Mar 22 23:06:55 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:06:55 2020] 127.0.0.1:45864 [200]: /
+[Sun Mar 22 23:07:09 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:07:09 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 44
+[Sun Mar 22 23:07:09 2020] 127.0.0.1:45876 [200]: /
+[Sun Mar 22 23:07:46 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:07:46 2020] PHP Notice:  Undefined variable: bo in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 44
+[Sun Mar 22 23:07:46 2020] 127.0.0.1:45884 [200]: /
+[Sun Mar 22 23:07:51 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:07:51 2020] 127.0.0.1:45888 [200]: /
+[Sun Mar 22 23:08:23 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:08:23 2020] 127.0.0.1:45896 [200]: /
+[Sun Mar 22 23:08:33 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:08:33 2020] 127.0.0.1:45900 [200]: /
+[Sun Mar 22 23:09:01 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:09:01 2020] 127.0.0.1:45910 [200]: /
+[Sun Mar 22 23:09:16 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:09:16 2020] 127.0.0.1:45918 [200]: /
+[Sun Mar 22 23:09:29 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:09:29 2020] 127.0.0.1:45926 [200]: /
+[Sun Mar 22 23:09:38 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 23:09:38 2020] 127.0.0.1:45930 [200]: /

@@ -12,6 +12,7 @@ return function(array $DVs, array $GLOBs, string $route) /** BEGIN{{{ **/{
   $clsr = require($cfn);
   $clo = new ReflectionFunction($clsr);
   $params = $clo->getParameters();
+
   /***
    *
    *
@@ -23,12 +24,18 @@ return function(array $DVs, array $GLOBs, string $route) /** BEGIN{{{ **/{
     else return[$name]; 
   };
   $ptypes = array_map($rzf, $params);
+
   /**@var controller runtime arguments */
   $cra = func_get_args();
   $managedController = function($data)use($clo,$ptypes,$cra,$route) {
     $o = function($name, $type='', $classExists = false ) use ($data,$cra,$route,$clo) { 
       $name = trim($name); $ret = '';
-      if($type&&class_exists($type)) { $ret = (new ReflectionClass($type))->newInstanceArgs($cra); }
+      if($type) {
+        $CLASSFILE = realpath(__DIR__.'/../classes/').'/'.$type.'.php';
+        if(file_exists($CLASSFILE)) require_once($CLASSFILE);  
+
+        $ret = (new ReflectionClass($type))->newInstanceArgs($cra);
+      }
       if(!$ret)
         $ret = $$name;
       if(!$ret)
