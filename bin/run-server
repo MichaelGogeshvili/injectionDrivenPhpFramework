@@ -50,7 +50,7 @@ case $1 in
   stop_server 
 ;;
 *)
-warning NO OPT $@
+warning NO-MANDATORY-ARGUMENT-GIVEN $@
 ;;
 esac
 
