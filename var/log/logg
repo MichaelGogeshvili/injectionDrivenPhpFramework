@@ -380,3 +380,77 @@ Stack trace:
 [Sun Mar 22 22:35:52 2020] 127.0.0.1:45272 [200]: /another
 [Sun Mar 22 22:37:03 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
 [Sun Mar 22 22:37:03 2020] 127.0.0.1:45282 [200]: /another
+[Sun Mar 22 22:37:26 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:37:26 2020] 127.0.0.1:45292 [200]: /another
+[Sun Mar 22 22:37:27 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:37:27 2020] 127.0.0.1:45296 [200]: /another
+[Sun Mar 22 22:37:29 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:37:29 2020] 127.0.0.1:45300 [200]: /
+[Sun Mar 22 22:37:49 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:37:49 2020] 127.0.0.1:45312 [200]: /
+[Sun Mar 22 22:38:25 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:38:25 2020] PHP Warning:  preg_match() expects parameter 2 to be string, array given in /home/misha/injectionDrivenPhpFramework/app/sys/lib/embed on line 19
+[Sun Mar 22 22:38:25 2020] PHP Warning:  preg_match() expects parameter 2 to be string, array given in /home/misha/injectionDrivenPhpFramework/app/sys/lib/embed on line 19
+[Sun Mar 22 22:38:25 2020] 127.0.0.1:45320 [200]: /
+[Sun Mar 22 22:38:41 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:38:41 2020] 127.0.0.1:45328 [200]: /
+[Sun Mar 22 22:39:34 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:39:34 2020] 127.0.0.1:45336 [200]: /
+[Sun Mar 22 22:39:43 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:39:43 2020] 127.0.0.1:45340 [200]: /
+[Sun Mar 22 22:39:51 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:39:51 2020] 127.0.0.1:45344 [200]: /
+[Sun Mar 22 22:40:55 2020] PHP Parse error:  syntax error, unexpected ';' in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 14
+[Sun Mar 22 22:40:55 2020] 127.0.0.1:45368 [500]: / - syntax error, unexpected ';' in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 14
+[Sun Mar 22 22:41:08 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:41:08 2020] 127.0.0.1:45380 [200]: /
+[Sun Mar 22 22:41:24 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:41:24 2020] 127.0.0.1:45388 [200]: /another
+[Sun Mar 22 22:41:25 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:41:25 2020] 127.0.0.1:45392 [200]: /
+[Sun Mar 22 22:41:58 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:41:58 2020] 127.0.0.1:45402 [200]: /
+[Sun Mar 22 22:42:19 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:42:19 2020] 127.0.0.1:45418 [200]: /
+[Sun Mar 22 22:42:27 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:42:27 2020] 127.0.0.1:45422 [200]: /
+[Sun Mar 22 22:42:55 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:42:55 2020] 127.0.0.1:45430 [200]: /another
+[Sun Mar 22 22:42:56 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:42:56 2020] 127.0.0.1:45434 [200]: /another
+[Sun Mar 22 22:44:02 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:44:02 2020] PHP Notice:  Undefined variable: has_tags in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 18
+[Sun Mar 22 22:44:02 2020] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/misha/injectionDrivenPhpFramework/app/sys/getview:18
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#1 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#2 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 18
+[Sun Mar 22 22:44:02 2020] 127.0.0.1:45442 [500]: /another - Uncaught Error: Function name must be a string in /home/misha/injectionDrivenPhpFramework/app/sys/getview:18
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#1 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#2 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 18
+[Sun Mar 22 22:44:10 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:44:10 2020] 127.0.0.1:45446 [200]: /another
+[Sun Mar 22 22:44:13 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:44:13 2020] 127.0.0.1:45454 [200]: /
+[Sun Mar 22 22:44:23 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:44:23 2020] 127.0.0.1:45462 [200]: /
+[Sun Mar 22 22:44:44 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:44:44 2020] 127.0.0.1:45472 [200]: /
+[Sun Mar 22 22:45:00 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:45:00 2020] PHP Warning:  preg_match() expects parameter 2 to be string, array given in /home/misha/injectionDrivenPhpFramework/app/sys/lib/embed on line 19
+[Sun Mar 22 22:45:00 2020] PHP Warning:  preg_match() expects parameter 2 to be string, array given in /home/misha/injectionDrivenPhpFramework/app/sys/lib/embed on line 19
+[Sun Mar 22 22:45:00 2020] 127.0.0.1:45480 [200]: /
+[Sun Mar 22 22:45:01 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:45:01 2020] PHP Warning:  preg_match() expects parameter 2 to be string, array given in /home/misha/injectionDrivenPhpFramework/app/sys/lib/embed on line 19
+[Sun Mar 22 22:45:01 2020] PHP Warning:  preg_match() expects parameter 2 to be string, array given in /home/misha/injectionDrivenPhpFramework/app/sys/lib/embed on line 19
+[Sun Mar 22 22:45:01 2020] 127.0.0.1:45484 [200]: /
+[Sun Mar 22 22:45:09 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:45:09 2020] 127.0.0.1:45488 [200]: /
+[Sun Mar 22 22:45:14 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:45:14 2020] 127.0.0.1:45492 [200]: /
+[Sun Mar 22 22:45:43 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:45:43 2020] 127.0.0.1:45504 [200]: /

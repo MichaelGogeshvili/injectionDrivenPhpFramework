@@ -9,7 +9,13 @@ return function( string$route ) {
     try {
       $viewInfo = $GLOBALS['getViewInfo']();
       $renderer = require(__DIR__."/render/incl/render");
+      //var_dump($renderer($viewInfo[1], $input)()); exit; 
+      $P = ($renderer($viewInfo[1], $input)());
       
+      if(is_array($P)){
+        return json_encode($P);
+      }
+      else
       return $GLOBALS['import']('app/sys/lib/embed')
         (
           $renderer($viewInfo[1], $input)(), 

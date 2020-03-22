@@ -3,18 +3,5 @@
  * #========(#)/home/misha/myFrame/app/views/main.view============
  */
 return function($mapper){
-  $je = json_encode($mapper->getData());
-  return <<<EOF
-    <head>      
-      <meta layout="disabled">
-      <title>$je</title>
-    </head>
-    <body>
-      <A>
-        $mapper->T_key
-      </A><A>
-        $mapper->P_key
-      </A>
-    </body>
-EOF;
+  return ($mapper->getData());
 };
