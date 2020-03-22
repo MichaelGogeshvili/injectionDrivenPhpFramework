@@ -8,6 +8,7 @@ function warning() {
 }
 function failure() {
   printf "${DOTS}FAILURE\r%s\n"  "$@"
+  cat ${BASE}/var/log/logg
   return 1
 }
 function success(){

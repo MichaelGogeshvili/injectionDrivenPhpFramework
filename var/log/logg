@@ -1,1 +1,382 @@
-./bin/run-server: line 23: php: command not found
+[Sun Mar 22 21:23:18 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:23:18 2020] 127.0.0.1:44166 [200]: /
+[Sun Mar 22 21:24:48 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:24:48 2020] 127.0.0.1:44198 [200]: /
+[Sun Mar 22 21:24:48 2020] 127.0.0.1:44202 [404]: /favicon.ico - No such file or directory
+[Sun Mar 22 21:24:50 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:24:50 2020] 127.0.0.1:44206 [200]: /
+[Sun Mar 22 21:24:51 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:24:51 2020] 127.0.0.1:44210 [200]: /
+[Sun Mar 22 21:25:13 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:25:13 2020] 127.0.0.1:44218 [200]: /
+[Sun Mar 22 21:25:13 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:25:13 2020] 127.0.0.1:44222 [200]: /
+[Sun Mar 22 21:25:21 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:25:21 2020] 127.0.0.1:44226 [200]: /
+[Sun Mar 22 21:25:21 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:25:21 2020] 127.0.0.1:44230 [200]: /
+[Sun Mar 22 21:25:22 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:25:22 2020] 127.0.0.1:44234 [200]: /
+[Sun Mar 22 21:25:29 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:25:29 2020] 127.0.0.1:44238 [200]: /
+[Sun Mar 22 21:27:00 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:27:00 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:27:00 2020] 127.0.0.1:44248 [200]: /
+[Sun Mar 22 21:28:53 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:28:53 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:28:53 2020] 127.0.0.1:44256 [200]: /
+[Sun Mar 22 21:30:22 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:30:22 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:30:22 2020] 127.0.0.1:44266 [200]: /
+[Sun Mar 22 21:31:10 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:31:10 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:31:10 2020] 127.0.0.1:44278 [200]: /
+[Sun Mar 22 21:31:25 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:31:25 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:31:25 2020] 127.0.0.1:44286 [200]: /
+[Sun Mar 22 21:32:26 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:32:26 2020] 127.0.0.1:44298 [200]: /
+[Sun Mar 22 21:32:27 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:32:27 2020] 127.0.0.1:44302 [200]: /
+[Sun Mar 22 21:32:49 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:32:49 2020] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to {closure}() must be of the type array, boolean given, called in /home/misha/injectionDrivenPhpFramework/app/sys/app on line 21 and defined in /home/misha/injectionDrivenPhpFramework/app/sys/getview:8
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(false, 'incl')
+#1 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#2 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 8
+[Sun Mar 22 21:32:49 2020] 127.0.0.1:44314 [500]: / - Uncaught TypeError: Argument 1 passed to {closure}() must be of the type array, boolean given, called in /home/misha/injectionDrivenPhpFramework/app/sys/app on line 21 and defined in /home/misha/injectionDrivenPhpFramework/app/sys/getview:8
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(false, 'incl')
+#1 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#2 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 8
+[Sun Mar 22 21:32:50 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:32:50 2020] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to {closure}() must be of the type array, boolean given, called in /home/misha/injectionDrivenPhpFramework/app/sys/app on line 21 and defined in /home/misha/injectionDrivenPhpFramework/app/sys/getview:8
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(false, 'incl')
+#1 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#2 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 8
+[Sun Mar 22 21:32:50 2020] 127.0.0.1:44318 [500]: / - Uncaught TypeError: Argument 1 passed to {closure}() must be of the type array, boolean given, called in /home/misha/injectionDrivenPhpFramework/app/sys/app on line 21 and defined in /home/misha/injectionDrivenPhpFramework/app/sys/getview:8
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(false, 'incl')
+#1 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#2 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 8
+[Sun Mar 22 21:33:07 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:33:07 2020] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to {closure}() must be of the type array, boolean given, called in /home/misha/injectionDrivenPhpFramework/app/sys/app on line 21 and defined in /home/misha/injectionDrivenPhpFramework/app/sys/getview:8
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(false, 'incl')
+#1 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#2 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 8
+[Sun Mar 22 21:33:07 2020] 127.0.0.1:44330 [500]: / - Uncaught TypeError: Argument 1 passed to {closure}() must be of the type array, boolean given, called in /home/misha/injectionDrivenPhpFramework/app/sys/app on line 21 and defined in /home/misha/injectionDrivenPhpFramework/app/sys/getview:8
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(false, 'incl')
+#1 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#2 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/getview on line 8
+[Sun Mar 22 21:33:15 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:33:15 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:33:15 2020] 127.0.0.1:44334 [200]: /
+[Sun Mar 22 21:33:58 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:33:58 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:33:58 2020] 127.0.0.1:44344 [200]: /
+[Sun Mar 22 21:35:31 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:35:31 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:35:31 2020] 127.0.0.1:44354 [200]: /
+[Sun Mar 22 21:47:58 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:47:58 2020] PHP Fatal error:  Uncaught Error: Access to undeclared static property: DataMapper::$resolver in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper:5
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper(12): DataMapper->__construct(Array)
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/render(13): {closure}(Array)
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/getview(21): {closure}()
+#3 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#4 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#5 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper on line 5
+[Sun Mar 22 21:47:58 2020] 127.0.0.1:44386 [500]: / - Uncaught Error: Access to undeclared static property: DataMapper::$resolver in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper:5
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper(12): DataMapper->__construct(Array)
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/render(13): {closure}(Array)
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/getview(21): {closure}()
+#3 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#4 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#5 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper on line 5
+[Sun Mar 22 21:48:06 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:48:06 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:48:06 2020] 127.0.0.1:44390 [200]: /
+[Sun Mar 22 21:49:46 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:49:46 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:49:46 2020] 127.0.0.1:44402 [200]: /
+[Sun Mar 22 21:50:18 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:50:18 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:50:18 2020] 127.0.0.1:44410 [200]: /
+[Sun Mar 22 21:50:45 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:50:45 2020] 127.0.0.1:44418 [200]: /
+[Sun Mar 22 21:50:50 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:50:50 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 21:50:50 2020] 127.0.0.1:44422 [200]: /
+[Sun Mar 22 21:51:24 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:51:24 2020] 127.0.0.1:44430 [200]: /
+[Sun Mar 22 21:51:34 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:51:34 2020] PHP Recoverable fatal error:  Object of class DataMapper could not be converted to string in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 9
+[Sun Mar 22 21:51:34 2020] 127.0.0.1:44438 [500]: /
+[Sun Mar 22 21:51:47 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:51:47 2020] PHP Fatal error:  Uncaught Error: Call to undefined method DataMapper::__to_string() in /home/misha/injectionDrivenPhpFramework/app/views/main.view:9
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/render(13): {closure}(Object(DataMapper))
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/getview(21): {closure}()
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#3 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#4 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 9
+[Sun Mar 22 21:51:47 2020] 127.0.0.1:44462 [500]: / - Uncaught Error: Call to undefined method DataMapper::__to_string() in /home/misha/injectionDrivenPhpFramework/app/views/main.view:9
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/render(13): {closure}(Object(DataMapper))
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/getview(21): {closure}()
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#3 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#4 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 9
+[Sun Mar 22 21:52:05 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:52:05 2020] 127.0.0.1:44478 [200]: /
+[Sun Mar 22 21:52:09 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:52:09 2020] 127.0.0.1:44482 [200]: /
+[Sun Mar 22 21:52:21 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:52:21 2020] PHP Fatal error:  Uncaught Error: Call to a member function __invoke() on array in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper:8
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/views/main.view(6): DataMapper->__get('field')
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/render(13): {closure}(Object(DataMapper))
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/getview(21): {closure}()
+#3 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#4 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#5 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper on line 8
+[Sun Mar 22 21:52:21 2020] 127.0.0.1:44490 [500]: / - Uncaught Error: Call to a member function __invoke() on array in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper:8
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/views/main.view(6): DataMapper->__get('field')
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/render(13): {closure}(Object(DataMapper))
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/getview(21): {closure}()
+#3 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#4 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#5 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper on line 8
+[Sun Mar 22 21:52:33 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:52:33 2020] PHP Notice:  Undefined variable: J in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 9
+[Sun Mar 22 21:52:33 2020] 127.0.0.1:44502 [200]: /
+[Sun Mar 22 21:54:23 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:54:23 2020] PHP Notice:  Undefined variable: J in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 9
+[Sun Mar 22 21:54:23 2020] 127.0.0.1:44512 [200]: /
+[Sun Mar 22 21:54:50 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:54:50 2020] PHP Notice:  Undefined variable: J in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 9
+[Sun Mar 22 21:54:50 2020] 127.0.0.1:44524 [200]: /
+[Sun Mar 22 21:55:09 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:55:09 2020] PHP Notice:  Undefined variable: J in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 9
+[Sun Mar 22 21:55:09 2020] 127.0.0.1:44534 [200]: /
+[Sun Mar 22 21:56:12 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:56:12 2020] PHP Notice:  Undefined variable: J in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 9
+[Sun Mar 22 21:56:12 2020] 127.0.0.1:44544 [200]: /
+[Sun Mar 22 21:56:35 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:56:35 2020] PHP Notice:  Undefined variable: map in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 8
+[Sun Mar 22 21:56:35 2020] PHP Notice:  Trying to get property 'T_key' of non-object in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 8
+[Sun Mar 22 21:56:35 2020] 127.0.0.1:44554 [200]: /
+[Sun Mar 22 21:57:35 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:57:35 2020] PHP Parse error:  syntax error, unexpected ':', expecting ';' in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper on line 9
+[Sun Mar 22 21:57:35 2020] 127.0.0.1:44566 [500]: / - syntax error, unexpected ':', expecting ';' in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper on line 9
+[Sun Mar 22 21:58:05 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:58:05 2020] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper on line 9
+[Sun Mar 22 21:58:05 2020] 127.0.0.1:44582 [500]: / - syntax error, unexpected ';', expecting ',' or ')' in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper on line 9
+[Sun Mar 22 21:58:06 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:58:06 2020] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper on line 9
+[Sun Mar 22 21:58:06 2020] 127.0.0.1:44586 [500]: / - syntax error, unexpected ';', expecting ',' or ')' in /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/lib/class_data_mapper on line 9
+[Sun Mar 22 21:58:22 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:58:22 2020] PHP Notice:  Undefined variable: map in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 8
+[Sun Mar 22 21:58:22 2020] PHP Notice:  Trying to get property 'T_key' of non-object in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 8
+[Sun Mar 22 21:58:22 2020] 127.0.0.1:44598 [200]: /
+[Sun Mar 22 21:58:22 2020] 127.0.0.1:44602 [404]: /favicon.ico - No such file or directory
+[Sun Mar 22 21:58:46 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:58:46 2020] PHP Notice:  Undefined variable: map in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 8
+[Sun Mar 22 21:58:46 2020] PHP Notice:  Trying to get property 'T_key' of non-object in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 8
+[Sun Mar 22 21:58:46 2020] 127.0.0.1:44608 [200]: /
+[Sun Mar 22 21:59:00 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:59:00 2020] PHP Notice:  Undefined variable: map in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 8
+[Sun Mar 22 21:59:00 2020] PHP Notice:  Trying to get property 'T_key' of non-object in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 8
+[Sun Mar 22 21:59:00 2020] 127.0.0.1:44616 [200]: /
+[Sun Mar 22 21:59:11 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:59:11 2020] PHP Notice:  Undefined variable: map in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 8
+[Sun Mar 22 21:59:11 2020] PHP Notice:  Trying to get property 'T_key' of non-object in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 8
+[Sun Mar 22 21:59:11 2020] 127.0.0.1:44624 [200]: /
+[Sun Mar 22 21:59:20 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:59:20 2020] 127.0.0.1:44628 [200]: /
+[Sun Mar 22 21:59:33 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:59:33 2020] 127.0.0.1:44636 [200]: /
+[Sun Mar 22 21:59:41 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:59:41 2020] 127.0.0.1:44640 [200]: /
+[Sun Mar 22 21:59:59 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 21:59:59 2020] 127.0.0.1:44650 [200]: /
+[Sun Mar 22 22:00:40 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:00:40 2020] 127.0.0.1:44662 [200]: /
+[Sun Mar 22 22:01:02 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:01:02 2020] 127.0.0.1:44670 [200]: /
+[Sun Mar 22 22:01:02 2020] 127.0.0.1:44674 [404]: /favicon.ico - No such file or directory
+[Sun Mar 22 22:01:13 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:01:13 2020] 127.0.0.1:44678 [200]: /
+[Sun Mar 22 22:01:47 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:01:47 2020] PHP Fatal error:  Uncaught Error: Call to undefined method DataMapper::getData() in /home/misha/injectionDrivenPhpFramework/app/views/main.view:6
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/render(13): {closure}(Object(DataMapper))
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/getview(21): {closure}()
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#3 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#4 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 6
+[Sun Mar 22 22:01:47 2020] 127.0.0.1:44686 [500]: / - Uncaught Error: Call to undefined method DataMapper::getData() in /home/misha/injectionDrivenPhpFramework/app/views/main.view:6
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/render(13): {closure}(Object(DataMapper))
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/getview(21): {closure}()
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#3 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#4 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 6
+[Sun Mar 22 22:02:15 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:02:15 2020] PHP Notice:  Undefined variable: tag in /home/misha/injectionDrivenPhpFramework/app/sys/lib/pretty on line 16
+[Sun Mar 22 22:02:15 2020] 127.0.0.1:44698 [200]: /
+[Sun Mar 22 22:03:28 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:03:28 2020] PHP Fatal error:  Uncaught Error: Call to undefined function disable_layout() in /home/misha/injectionDrivenPhpFramework/app/views/main.view:7
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/render(13): {closure}(Object(DataMapper))
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/getview(21): {closure}()
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#3 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#4 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 7
+[Sun Mar 22 22:03:28 2020] 127.0.0.1:44710 [500]: / - Uncaught Error: Call to undefined function disable_layout() in /home/misha/injectionDrivenPhpFramework/app/views/main.view:7
+Stack trace:
+#0 /home/misha/injectionDrivenPhpFramework/app/sys/render/incl/render(13): {closure}(Object(DataMapper))
+#1 /home/misha/injectionDrivenPhpFramework/app/sys/getview(21): {closure}()
+#2 /home/misha/injectionDrivenPhpFramework/app/sys/app(21): {closure}(Array, 'incl')
+#3 /home/misha/injectionDrivenPhpFramework/index.php(7): {closure}(Array)
+#4 {main}
+  thrown in /home/misha/injectionDrivenPhpFramework/app/views/main.view on line 7
+[Sun Mar 22 22:03:40 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:03:40 2020] 127.0.0.1:44722 [200]: /
+[Sun Mar 22 22:05:57 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:05:57 2020] 127.0.0.1:44732 [200]: /
+[Sun Mar 22 22:06:24 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:06:24 2020] 127.0.0.1:44740 [200]: /
+[Sun Mar 22 22:06:24 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:06:24 2020] 127.0.0.1:44744 [200]: /
+[Sun Mar 22 22:07:12 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:07:12 2020] 127.0.0.1:44754 [200]: /
+[Sun Mar 22 22:07:18 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:07:18 2020] 127.0.0.1:44758 [200]: /
+[Sun Mar 22 22:07:35 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:07:35 2020] 127.0.0.1:44766 [200]: /
+[Sun Mar 22 22:07:44 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:07:44 2020] 127.0.0.1:44770 [200]: /
+[Sun Mar 22 22:08:29 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:08:29 2020] 127.0.0.1:44786 [200]: /
+[Sun Mar 22 22:09:09 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:09:09 2020] 127.0.0.1:44794 [200]: /
+[Sun Mar 22 22:09:43 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:09:43 2020] 127.0.0.1:44804 [200]: /
+[Sun Mar 22 22:10:27 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:10:27 2020] 127.0.0.1:44814 [200]: /
+[Sun Mar 22 22:11:07 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:11:07 2020] 127.0.0.1:44826 [200]: /
+[Sun Mar 22 22:11:47 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:11:47 2020] 127.0.0.1:44838 [200]: /
+[Sun Mar 22 22:12:37 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:12:37 2020] 127.0.0.1:44846 [200]: /
+[Sun Mar 22 22:13:01 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:13:01 2020] 127.0.0.1:44854 [200]: /
+[Sun Mar 22 22:13:23 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:13:23 2020] 127.0.0.1:44866 [200]: /
+[Sun Mar 22 22:13:37 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:13:37 2020] 127.0.0.1:44874 [200]: /
+[Sun Mar 22 22:14:13 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:14:13 2020] 127.0.0.1:44882 [200]: /
+[Sun Mar 22 22:14:21 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:14:21 2020] 127.0.0.1:44886 [200]: /
+[Sun Mar 22 22:17:21 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:17:21 2020] 127.0.0.1:44898 [200]: /
+[Sun Mar 22 22:17:33 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:17:33 2020] Function () does not exist
+[Sun Mar 22 22:17:33 2020] PHP Notice:  Undefined variable: pool in /home/misha/injectionDrivenPhpFramework/app/views/error.view on line 8
+[Sun Mar 22 22:17:33 2020] PHP Notice:  Trying to get property 'error' of non-object in /home/misha/injectionDrivenPhpFramework/app/views/error.view on line 8
+[Sun Mar 22 22:17:33 2020] 127.0.0.1:44908 [200]: /
+[Sun Mar 22 22:19:25 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:19:25 2020] 127.0.0.1:44922 [200]: /
+[Sun Mar 22 22:19:41 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:19:41 2020] 127.0.0.1:44930 [200]: /
+[Sun Mar 22 22:20:08 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:20:08 2020] 127.0.0.1:44940 [200]: /
+[Sun Mar 22 22:22:02 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:22:02 2020] 127.0.0.1:44954 [200]: /
+[Sun Mar 22 22:22:20 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:22:20 2020] 127.0.0.1:44962 [200]: /
+[Sun Mar 22 22:23:02 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:23:02 2020] 127.0.0.1:44970 [200]: /
+[Sun Mar 22 22:23:19 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:23:19 2020] 127.0.0.1:44978 [200]: /
+[Sun Mar 22 22:24:05 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:24:05 2020] 127.0.0.1:44990 [200]: /
+[Sun Mar 22 22:24:20 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:24:20 2020] 127.0.0.1:44998 [200]: /
+[Sun Mar 22 22:26:05 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:26:05 2020] 127.0.0.1:45010 [200]: /
+[Sun Mar 22 22:26:28 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:26:28 2020] 127.0.0.1:45018 [200]: /
+[Sun Mar 22 22:26:52 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:26:52 2020] 127.0.0.1:45028 [200]: /
+[Sun Mar 22 22:26:53 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:26:53 2020] 127.0.0.1:45032 [200]: /
+[Sun Mar 22 22:26:53 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:26:53 2020] 127.0.0.1:45036 [200]: /
+[Sun Mar 22 22:28:29 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:28:29 2020] 127.0.0.1:45112 [200]: /
+[Sun Mar 22 22:28:55 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:28:55 2020] 127.0.0.1:45120 [200]: /
+[Sun Mar 22 22:28:56 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:28:56 2020] 127.0.0.1:45124 [200]: /
+[Sun Mar 22 22:29:06 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:29:06 2020] 127.0.0.1:45132 [200]: /
+[Sun Mar 22 22:29:14 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:29:14 2020] 127.0.0.1:45136 [200]: /
+[Sun Mar 22 22:29:22 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:29:22 2020] 127.0.0.1:45140 [200]: /
+[Sun Mar 22 22:29:33 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:29:33 2020] 127.0.0.1:45152 [200]: /
+[Sun Mar 22 22:31:08 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:31:08 2020] 127.0.0.1:45162 [200]: /
+[Sun Mar 22 22:31:09 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:31:09 2020] 127.0.0.1:45166 [200]: /
+[Sun Mar 22 22:31:31 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:31:31 2020] 127.0.0.1:45176 [200]: /
+[Sun Mar 22 22:31:48 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:31:48 2020] 127.0.0.1:45186 [200]: /
+[Sun Mar 22 22:32:03 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:32:03 2020] 127.0.0.1:45194 [200]: /
+[Sun Mar 22 22:32:28 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:32:28 2020] 127.0.0.1:45202 [200]: /
+[Sun Mar 22 22:33:08 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:33:08 2020] 127.0.0.1:45210 [200]: /
+[Sun Mar 22 22:33:50 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:33:50 2020] 127.0.0.1:45218 [200]: /
+[Sun Mar 22 22:34:21 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:34:21 2020] 127.0.0.1:45226 [200]: /
+[Sun Mar 22 22:35:01 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/main.controller
+[Sun Mar 22 22:35:01 2020] 127.0.0.1:45240 [200]: /
+[Sun Mar 22 22:35:13 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:35:13 2020] PHP Warning:  file_exists() expects parameter 1 to be a valid path, object given in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 9
+[Sun Mar 22 22:35:13 2020] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /home/misha/injectionDrivenPhpFramework/app/sys/getcontroller on line 10
+[Sun Mar 22 22:35:13 2020] 127.0.0.1:45248 [500]: /another
+[Sun Mar 22 22:35:39 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:35:39 2020] 127.0.0.1:45260 [200]: /another
+[Sun Mar 22 22:35:52 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:35:52 2020] 127.0.0.1:45272 [200]: /another
+[Sun Mar 22 22:37:03 2020] /home/misha/injectionDrivenPhpFramework/app/controllers/another.controller
+[Sun Mar 22 22:37:03 2020] 127.0.0.1:45282 [200]: /another

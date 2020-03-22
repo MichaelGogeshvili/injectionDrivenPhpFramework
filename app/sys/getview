@@ -6,28 +6,15 @@ return function( string$route ) {
     * @return html string 
     **/
   return function( array $input ) {
-    $contentFun = null; $layoutFun = null;
     try {
-      $A = __DIR__."/render/incl/render";
-      if(!file_exists($A)) {
-      
-        throw new Exception($A.' -- does -- not -- exist');
-      }
-      $renderer = require($A);
       $viewInfo = $GLOBALS['getViewInfo']();
+      $renderer = require(__DIR__."/render/incl/render");
       
-      $contentFun = $renderer($viewInfo[1], $input);
-      $layoutFun  = $renderer($viewInfo[0], $input);
-      $content = $contentFun();
-
-      $layout  = $layoutFun();
-      if($layout){
-        $EMBEDF = $GLOBALS['import']('app/sys/lib/embed');
-        return $EMBEDF($content,$layout);
-      }
-      else{
-        return $content;
-      }
+      return $GLOBALS['import']('app/sys/lib/embed')
+        (
+          $renderer($viewInfo[1], $input)(), 
+          $renderer($viewInfo[0], $input)()
+        ); 
     }
     catch(Exception $seh){
       $errf = implode(DIRECTORY_SEPARATOR,[MAIN,'app',"views","error.view"]) ; 

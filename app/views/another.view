@@ -6,7 +6,7 @@ return function($mapper){
   $je = json_encode($mapper->getData());
   return <<<EOF
     <head>      
-      <meta layout="disabled">
+      <meta layout="main">
       <title>$je</title>
     </head>
     <body>

@@ -1,0 +1,7 @@
+<?php
+
+
+return function ($viewResult) {
+  $ret = $viewResult;//returning as is
+  return $GLOBALS['import']('app/sys/lib/pretty')($ret,str_repeat(' ',2));
+};

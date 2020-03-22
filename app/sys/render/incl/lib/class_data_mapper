@@ -1,13 +1,15 @@
 <?php
 if(!class_exists('DataMapper')) { 
   class DataMapper {
-    public $resolver;
-    public function __construct($resolver){ $this->resolver = $resolver; }
-
+    public $map;
+    public function __construct($map){ $this->map = $map; }
+    public function __tostring() { return json_encode($this->map); }
     public function __get($name) { 
-      $resolved = $this->resolver->__invoke($name);
-      return $resolved?:"Warning: template param \$$name is not assigned";
+      $see = json_encode(array_keys($this->map));
+      return  array_key_exists($name, $this->map) ? $this->map[$name] 
+        : " key $name is wrong: $see ";
     }
+    public function getData() { return $this->map; }
   }
 }
 return function($data) { return new DataMapper($data); } ;

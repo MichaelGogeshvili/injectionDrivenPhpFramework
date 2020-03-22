@@ -3,15 +3,15 @@
  (#) app/sys/render/incl/render
 */
 
-return function(string  $viewFullPath,array $input) {
+return function(string $viewFullPath, array $input) {
   return function()use($input,$viewFullPath) {
     ob_start();
     $pMorph = require($viewFullPath);
     $string = ob_get_clean();
-    if(gettype($pMorph)=='object'){
-      #if( !empty ( $sting ) ) {error_log("Unclean $viewFullPath; output started; ",4); }
-      return $pMorph($GLOBALS['import']('app/sys/render/incl/lib/class_data_mapper')($input));
-    }else {
+    if(gettype($pMorph)==='object'){
+      $mapper = $GLOBALS['import']('app/sys/render/incl/lib/class_data_mapper')($input);
+      return $pMorph($mapper);
+    } else {
       return $string;
     }
     return $string;

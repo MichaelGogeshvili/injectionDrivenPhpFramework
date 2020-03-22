@@ -3,16 +3,26 @@
 
 return function ($viewResult, $layout=null) {
 
-  $callback = function($m) use($viewResult) {
+  $callback = function($tagInfo) 
+        use($viewResult) 
+  {
     $trimTag = function($s,$tagArray){ $S = '(\s|\n)*'; $rv = $s; forEach($tagArray as $TN) { $rv = preg_replace("{^$S<($TN){$S}>$S|$S</($TN)$S>$S\$}si",'',$rv); } return trim($rv); };
-    /** get rid of <body...> and </body> like stuff on the mapped patch */
+    /** get rid of <body...> and </body> like the stuff on the mapped patch */
+
     $tagExtractor = function ($tagName, $source) { $p = '@^.*<'.$tagName.'[^>]*>|</'.$tagName.'[^>]*>.*$@is'; return preg_replace( $p, "\n\n", $source); };
-    $tName=strtolower($m[1]);
+
+    $tName=strtolower($tagInfo[1]);
     if(!in_array($tName,['head','body']))
       throw new Exception("we implement only layout:head and layout:body");
 
-    $rt = $tagExtractor($tName, $viewResult);
-    return $trimTag($rt, ['html','body','head']);
+    $ret = $tagExtractor($tName, $viewResult);
+    if(preg_match('@<'.$tName.'[^>]*>@',$viewResult)) {
+     return $trimTag($ret, ['html','body','head']);
+    }
+    else 
+    {
+      return '⅔';
+    }
   };
 
 
